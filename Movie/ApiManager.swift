@@ -12,7 +12,6 @@ typealias Completion = (_ success: Bool, _ data: [String: Any?]?) -> ()
 
 class APIGenres {
     static let shared : APIGenres = APIGenres()
-    
     func getData(url : String, completion : @escaping Completion) {
         if let url = URL(string : url) {
             var urlRequest = URLRequest(url : url)
@@ -21,14 +20,17 @@ class APIGenres {
             URLSession.shared.dataTask(with: urlRequest) {(data, response, error) in
                 if let responseData = data {
                     let json = JSON(responseData)["genres"].arrayValue
-                    var detailModel = [DetailModel] ()
+                    var homeModel = [GenreModel] ()
                     for jsonData in json {
-                        detailModel.append(DetailModel(json: jsonData))
+                        homeModel.append(GenreModel(json: jsonData))
                         
                     }
-                    for model in detailModel {
-                        AppSettings.genres[model.id] = model.name                    }
-                    print(AppSettings.genres)
+                    for model in homeModel {
+                        AppSettings.genres[model.id] = model.name
+                        
+                    }
+                    
+//                        print(AppSettings.genres)
                     
                 } else {
                     completion(false, nil)
@@ -45,7 +47,13 @@ class APIGenres {
             URLSession.shared.dataTask(with: urlRequest){(data, response, error) in
                 if let responseData = data{
                     let json=JSON(responseData)["results"].arrayValue
-                    print(json)
+                    var detailModel = [DetailModel]()
+                    for model in json {
+                        detailModel.append(DetailModel(json: model))
+                    }
+                    completion(true, ["detailModel" : detailModel])
+                } else {
+                    completion(false, nil)
                 }
             }.resume()
     

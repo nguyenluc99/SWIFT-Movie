@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="cellID" selectionStyle="default" indentationWidth="10" rowHeight="155" id="KGk-i7-Jjw" customClass="HomeTableViewCell" customModule="Movie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="491" height="155"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="491" height="154.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Baf-Vg-VaU">
+                        <rect key="frame" x="13" y="16" width="108" height="101"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsU-Ra-lqu">
+                        <rect key="frame" x="159" y="16" width="150" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="BT2-D4-aZZ"/>
+                            <constraint firstAttribute="width" constant="150" id="ruP-Eo-ZA3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6M1-Ul-CEI">
+                        <rect key="frame" x="159" y="45" width="200" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="6vB-5E-KN2"/>
+                            <constraint firstAttribute="width" constant="200" id="vas-mS-tB4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVi-13-wNN">
+                        <rect key="frame" x="159" y="103" width="80" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Map-UG-h5y"/>
+                            <constraint firstAttribute="height" constant="21" id="h8r-8r-3gD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZVi-13-wNN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="159" id="0IL-gc-NYt"/>
+                    <constraint firstItem="XsU-Ra-lqu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="1rk-6F-94w"/>
+                    <constraint firstItem="6M1-Ul-CEI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="159" id="4LV-w4-2se"/>
+                    <constraint firstItem="6M1-Ul-CEI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="45" id="CqA-42-R1D"/>
+                    <constraint firstItem="XsU-Ra-lqu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="159" id="eGQ-9A-03o"/>
+                    <constraint firstAttribute="bottom" secondItem="ZVi-13-wNN" secondAttribute="bottom" constant="30.5" id="j8a-v9-ffZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblGenre" destination="6M1-Ul-CEI" id="yoo-UJ-fQW"/>
+                <outlet property="lblTitle" destination="XsU-Ra-lqu" id="wEr-0Z-3kV"/>
+                <outlet property="lblYear" destination="ZVi-13-wNN" id="put-lk-hYn"/>
+            </connections>
+            <point key="canvasLocation" x="164.49275362318841" y="59.933035714285708"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -10,11 +10,20 @@ import Foundation
 import SwiftyJSON
 
 class DetailModel : NSObject{
-    var id = 0
-    var name = ""
-    convenience init(json : JSON){
+    var poster = ""
+    var title = ""
+    var year = ""
+    var genre = [String]()
+    
+    convenience init(json : JSON) {
         self.init()
-        self.id = json["id"].intValue
-        self.name = json["name"].stringValue
+        self.poster = json["poster_path"].stringValue
+        self.title = json["title"].stringValue
+        self.year = json["release_date"].stringValue
+        let genre = json["genre_ids"].arrayObject as! [Int]
+        for gen in genre {
+            self.genre.append(AppSettings.genres[gen]!)
+        }
+        
     }
 }
